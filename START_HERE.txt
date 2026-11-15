@@ -1,0 +1,12 @@
+THE BATON OF SILENCE — COMPLETE WEBSITE
+
+This folder contains the website code, images, audio and fonts. Images have been converted losslessly to WebP to make the download smaller.
+
+RUN ON YOUR COMPUTER
+1. Extract the ZIP.
+2. Open Terminal in this folder.
+3. Run: python3 -m http.server 8000
+   On Windows: py -m http.server 8000
+4. Open http://localhost:8000 in your browser.
+
+No installation or build is needed. Use a local server because the site loads some files with JavaScript.

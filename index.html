@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#030712"><meta name="description" content="Meet Mira and Dr. Vance. Explore the quiet NASA machines that helped us reach farther across the Moon and Mars.">
+<title>The Baton of Silence — NASA Space Apps 2026</title>
+<link rel="preload" as="image" href="assets/landing-earth.webp"><link rel="preload" as="image" href="assets/landing-mira.webp"><link rel="preload" as="image" href="assets/landing-vance.webp"><link rel="preload" as="font" href="assets/outfit-black.ttf" type="font/ttf" crossorigin><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<section class="landing" id="landing" aria-label="The Baton of Silence landing page">
+<div class="landing-space" aria-hidden="true"></div><div class="landing-star-layer landing-star-far" aria-hidden="true"></div><div class="landing-star-layer landing-star-near" aria-hidden="true"></div><div class="landing-horizon" aria-hidden="true"></div>
+<header class="landing-header"><span class="landing-mark" aria-label="The Baton of Silence">✦</span><nav aria-label="Landing navigation"><button class="landing-nav-home" type="button" aria-current="page">Home</button><button class="landing-nav-mission" type="button" aria-controls="landing-mission" aria-expanded="false">Mission</button></nav></header>
+<div class="landing-copy"><p class="landing-eyebrow">NASA SPACE APPS 2026</p><h1>THE BATON OF SILENCE</h1><p class="landing-tagline">Some machines stopped talking. Their discoveries never did.</p><button class="landing-start" id="landing-start" type="button">START THE MISSION <span aria-hidden="true">→</span></button></div>
+<div class="landing-people" aria-hidden="true"><img class="landing-mira" src="assets/landing-mira.webp" alt="" width="1024" height="1536" draggable="false"><img class="landing-vance" src="assets/landing-vance.webp" alt="" width="1024" height="1536" draggable="false"></div>
+<div class="landing-mission" id="landing-mission" role="dialog" aria-modal="true" aria-labelledby="landing-mission-title" hidden><div class="landing-mission-panel"><button class="landing-mission-close" type="button" aria-label="Close Mission">×</button><span>OUR MISSION</span><h2 id="landing-mission-title">Small machines. Lasting discoveries.</h2><p>Built for the 2026 NASA Space Apps Challenge (<em>Abandoned but not Forgotten</em>) to teach ages 8+ how NASA's quiet machines helped each other explore the Moon and Mars</p><button class="landing-mission-start" type="button">START THE MISSION <span aria-hidden="true">→</span></button></div></div>
+</section>
+<section class="story-intro" id="story-intro" aria-label="Cinematic story introduction" aria-hidden="true" hidden>
+<div class="story-slide is-active" aria-hidden="false"><div class="story-tilt"><img src="assets/story-mira-book.webp" alt="Mira reading an illustrated book about Moon and Mars explorers in Dr. Vance's observatory" width="1672" height="941" draggable="false"></div></div>
+<div class="story-slide" aria-hidden="true"><div class="story-tilt"><picture><source media="(max-width: 720px)" srcset="assets/story-mira-arrives-mobile.webp"><img src="assets/story-mira-arrives.webp" alt="Mira rushing into Dr. Vance's observatory at night" width="1672" height="941" draggable="false"></picture></div></div>
+<div class="story-slide" aria-hidden="true"><div class="story-tilt"><picture><source media="(max-width: 720px)" srcset="assets/story-vance-telescope-mobile.webp"><img src="assets/story-vance-telescope.webp" alt="Dr. Vance aiming her telescope at the night sky from the observatory" width="1672" height="941" draggable="false"></picture></div></div>
+<div class="story-slide" aria-hidden="true"><div class="story-tilt"><img src="assets/story-mira-vance.webp" alt="Mira and Dr. Vance talking together in the observatory" width="1672" height="941" draggable="false"></div></div>
+<div class="story-vignette" aria-hidden="true"></div><div class="story-dust" aria-hidden="true"></div>
+<span class="story-count" id="story-count">01 / 04</span>
+<div class="story-caption" role="status" aria-live="polite"><p id="story-caption-text">Mira just learned that NASA never brought most of its Moon and Mars machines back home.</p></div>
+<div class="story-controls"><button class="story-skip" id="story-skip" type="button">Skip Intro</button><button class="story-next" id="story-next" type="button">Next <span aria-hidden="true">→</span></button></div>
+</section>
+<main id="universe" tabindex="0" inert aria-hidden="true" aria-label="Earth in the lower-left and a slowly rotating Moon in the upper-right. Click anywhere when prompted to continue the story.">
+<div class="stars" aria-hidden="true"></div>
+<div class="system" id="system">
+<div class="earth" id="earth"><canvas id="earth-globe" aria-hidden="true"></canvas><img src="assets/earth.jpg" alt="Earth, with sunlit clouds and a shaded night side" width="2048" height="2048" draggable="false" fetchpriority="high"></div>
+<div class="moon" id="moon"><canvas id="moon-globe" aria-hidden="true"></canvas><img src="assets/moon.jpg" alt="The Moon" width="1280" height="1280" draggable="false"><div class="moon-target" id="moon-target" aria-label="Apollo 11 laser ranging reflector at 0.67 degrees north, 23.47 degrees east"><i id="moon-target-dot"></i><span class="target-coordinates">0.67°N 23.47°E</span><span class="mirror-hit">Apollo 11 Mirror Hit!</span></div></div>
+</div>
+<div class="laser-stage" id="laser-stage" aria-live="polite">
+<svg class="laser-layer" id="laser-layer" aria-hidden="true"><defs><filter id="laser-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur><feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter></defs><line class="laser-track" id="laser-track"></line><line class="laser-ray" id="laser-ray" filter="url(#laser-glow)"></line><circle class="photon" id="photon" r="5" filter="url(#laser-glow)"></circle></svg>
+<div class="laser-telemetry" id="laser-telemetry"><strong id="laser-timer">0.00s</strong><span id="laser-distance">384,400 km</span></div>
+</div>
+<section class="mirror-reveal" id="mirror-reveal" aria-label="Telescope view of the Apollo 11 mirror" aria-hidden="true" inert>
+<svg class="mirror-reveal-lines" aria-hidden="true"><line id="mirror-reveal-line-top"></line><line id="mirror-reveal-line-bottom"></line></svg>
+<span class="mirror-reveal-coordinates" id="mirror-reveal-coordinates">0.67°N 23.47°E</span>
+<figure class="mirror-lens" id="mirror-lens"><img src="assets/apollo-11-mirror-photo.webp" alt="NASA Apollo 11 photograph AS11-40-5952 showing the deployed laser ranging retroreflector on the Moon" width="1200" height="1200" draggable="false"><figcaption><strong>Apollo 11 Mirror • Left July 21, 1969</strong><span><a href="https://eol.jsc.nasa.gov/SearchPhotos/photo.pl?frame=5952&amp;mission=AS11&amp;roll=40" target="_blank" rel="noopener noreferrer">NASA photo ↗</a><a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" target="_blank" rel="noopener noreferrer">NSSDCA 1969-059C ↗</a></span></figcaption></figure>
+</section>
+<h1 class="brand-title" aria-label="The Baton of Silence"><span><b>the baton</b></span><span><b>of silence.</b></span></h1>
+<section class="mira-scene" aria-label="Mira asks Dr. Vance a question">
+<div class="mira-dialogue" id="mira-dialogue">
+<span class="speaker-label">MIRA</span>
+<p id="mira-line" aria-live="polite"></p>
+<span class="visually-hidden">Dr. Vance... umm, I was curious, what happened to all the machines NASA left on the Moon? Do they just sit there dead?</span>
+</div>
+<img class="mira-character" src="assets/mira.webp" alt="Mira, a curious young student, thinking while looking upward" width="1086" height="1448" draggable="false">
+</section>
+<section class="vance-scene" id="vance-scene" aria-label="Dr. Vance answers Mira">
+<div class="vance-dialogue" id="vance-dialogue">
+<span class="speaker-label vance-label">DR. VANCE</span>
+<p id="vance-line" aria-live="polite"></p>
+<span class="visually-hidden">Not all of them, Mira. Watch what happens when we shine a laser at where Apollo 11 landed in 1969.</span>
+</div>
+<img class="vance-character vance-explain" src="assets/dr-vance-explain.webp" alt="Dr. Vance, a NASA scientist, explaining the experiment" width="1024" height="1536" draggable="false">
+<img class="vance-character vance-ready" src="assets/dr-vance-ready.webp" alt="Dr. Vance smiling and giving two thumbs up as the laser becomes ready" width="1024" height="1536" draggable="false">
+</section>
+<section class="post-echo-scene" id="post-echo-scene" aria-label="Mira and Dr. Vance discuss the Apollo 11 reflector">
+<div class="post-dialogue" id="post-dialogue"><span class="speaker-label" id="post-speaker">MIRA</span><p id="post-line" aria-live="polite"></p></div>
+<img class="post-character post-mira post-mira-amazed" src="assets/mira-amazed.webp" alt="Mira amazed by the returning laser pulse" width="1024" height="1536" draggable="false">
+<img class="post-character post-vance post-vance-mirrors" src="assets/vance-mirrors.webp" alt="Dr. Vance explaining the Apollo 11 mirror array" width="1024" height="1536" draggable="false">
+<img class="post-character post-mira post-mira-when" src="assets/mira-when.webp" alt="Mira asking when the mirrors were left on the Moon" width="1024" height="1536" draggable="false">
+<img class="post-character post-vance post-vance-date" src="assets/vance-date.webp" alt="Dr. Vance pointing while giving the Apollo 11 date" width="1024" height="1536" draggable="false">
+<img class="post-character post-mira post-mira-more" src="assets/mira-more.webp" alt="Mira pointing toward the Moon, excited to learn what else is there" width="1024" height="1536" draggable="false">
+<img class="post-character post-vance post-vance-robot" src="assets/vance-robot.webp" alt="Dr. Vance showing with her hands how small the first robot was" width="1024" height="1536" draggable="false">
+<img class="post-character post-vance post-vance-zoom" src="assets/vance-zoom.webp" alt="Dr. Vance inviting the viewer to look closer" width="1024" height="1536" draggable="false">
+</section>
+<button class="continue-prompt" id="continue-prompt" type="button" aria-label="Continue the story"><span aria-hidden="true"></span> click anywhere to continue</button>
+<button class="send-laser" id="send-laser" type="button" aria-label="Send laser pulse"><span aria-hidden="true"></span>SEND LASER PULSE</button>
+<button class="chapter-button" id="chapter-button" type="button">ENTER CHAPTER 1 <span aria-hidden="true">↗</span></button>
+<section class="chapter-surface" id="chapter-surface" aria-label="Chapter 1: Surveyor 3 on the Moon" tabindex="-1">
+<div class="chapter-terrain" aria-hidden="true"></div>
+<div class="surveyor-shadow" aria-hidden="true"></div>
+<div class="surveyor-rig" role="img" aria-label="Surveyor 3, a small silver three-legged lunar lander with a movable soil scoop arm, resting inside a crater">
+<img class="surveyor-lander" src="assets/surveyor-3-body.webp" alt="" width="1448" height="1086" draggable="false">
+<svg class="scoop-assembly" viewBox="0 0 1448 1086" aria-hidden="true"><defs><linearGradient id="scoop-metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8fbfb"/><stop offset=".48" stop-color="#868e91"/><stop offset="1" stop-color="#d4dce0"/></linearGradient></defs><g id="soil-scoop-arm"><path d="M443 651 L329 583 L139 700 L91 754" fill="none" stroke="#1a2025" stroke-width="22" stroke-linejoin="round" stroke-linecap="round"/><path d="M443 651 L329 583 L139 700 L91 754" fill="none" stroke="url(#scoop-metal)" stroke-width="15" stroke-linejoin="round" stroke-linecap="round"/><circle cx="329" cy="583" r="16" fill="#b1bdc4" stroke="#434c51" stroke-width="5"/><circle cx="139" cy="700" r="12" fill="#aab5ba" stroke="#434c51" stroke-width="4"/><path d="M55 758 Q76 775 105 758 L101 785 Q74 800 51 780 Z" fill="url(#scoop-metal)" stroke="#343b3f" stroke-width="5"/></g></svg>
+<div class="scoop-dirt" aria-hidden="true"></div>
+</div>
+<div class="soil-result" id="soil-result" role="status">SAFE! FIRM LIKE WET BEACH SAND!</div>
+<div class="chapter-caption"><span>CHAPTER 1</span><h2>Surveyor 3</h2><p>The little robot that went first.</p></div>
+<section class="chapter-story" id="chapter-story" aria-label="Mira and Dr. Vance explore Surveyor 3"><div class="chapter-dialogue"><span class="speaker-label" id="chapter-speaker">MIRA</span><p id="chapter-line" aria-live="polite"></p></div><img class="chapter-character" id="chapter-character" src="assets/mira-when.webp" alt="Mira asking about Surveyor 3" width="1024" height="1536" draggable="false"></section>
+<button class="chapter-continue" id="chapter-continue" type="button">CLICK ANYWHERE TO CONTINUE</button>
+<button class="poke-button" id="poke-button" type="button">POKE THE DIRT <span aria-hidden="true">↘</span></button>
+<button class="chapter2-button" id="chapter2-button" type="button">NEXT: CHAPTER 2 <span aria-hidden="true">→</span></button>
+</section>
+<section class="chapter2-surface" id="chapter2-surface" aria-label="Chapter 2: Apollo 15 Moon buggy and ALSEP in the lunar valley" tabindex="-1">
+<picture class="chapter2-landscape"><source media="(max-width: 720px)" srcset="assets/chapter2-empty-mobile.webp"><img src="assets/chapter2-empty-wide.webp" alt="A gray lunar valley beneath dusty mountains, with a small white ALSEP science box and antenna on the ground" width="1536" height="1024" draggable="false"></picture>
+<picture class="chapter2-earthscape" aria-hidden="true"><source media="(max-width: 720px)" srcset="assets/chapter2-earth-mobile.webp"><img src="assets/chapter2-earth-wide.webp" alt="" width="1536" height="1024" draggable="false"></picture>
+<img class="chapter2-rover" id="chapter2-rover" src="assets/chapter2-rover.webp" alt="Parked silver Apollo 15 Moon buggy with mesh wheels" width="1536" height="1024" draggable="false">
+<div class="chapter2-caption"><span>CHAPTER 2 · APOLLO 15</span><h2>The Moon Buggy</h2><p>Parked beside the quiet ALSEP science station.</p></div>
+<section class="chapter2-story" aria-label="Mira and Dr. Vance explore the Moon buggy"><div class="chapter2-dialogue"><span class="speaker-label" id="chapter2-speaker">MIRA</span><p id="chapter2-line" aria-live="polite"></p></div><img class="chapter2-character" id="chapter2-character" src="assets/mira-amazed.webp" alt="Mira amazed by the Moon buggy" width="1024" height="1536" draggable="false"></section>
+<div class="chapter2-gravity-result" id="chapter2-gravity-result" role="status" aria-live="polite"></div>
+<div class="chapter2-quake-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="chapter2-quake-result" role="status">MOONQUAKE DETECTED!</div>
+<button class="chapter2-continue" id="chapter2-continue" type="button">CLICK ANYWHERE TO CONTINUE</button>
+<button class="gravity-button gravity-earth-button" id="gravity-earth-button" type="button">TEST EARTH GRAVITY <span aria-hidden="true">↓</span></button>
+<button class="gravity-button gravity-moon-button" id="gravity-moon-button" type="button">SWITCH TO MOON GRAVITY <span aria-hidden="true">↑</span></button>
+<button class="gravity-button chapter2-quake-button" id="chapter2-quake-button" type="button">MOONQUAKE <span aria-hidden="true">〰</span></button>
+<button class="gravity-button chapter2-mars-button" id="chapter2-mars-button" type="button">FLY TO MARS <span aria-hidden="true">→</span></button>
+</section>
+<div class="mars-flight" aria-hidden="true"><div class="mars-flight-stars"></div><img class="mars-flight-moon" src="assets/moon.jpg" alt="" width="1280" height="1280"><img class="mars-flight-planet" src="assets/mars-globe.webp" alt="" width="1536" height="1024"></div>
+<section class="mars-surface" id="mars-surface" aria-label="Chapter 3: Spirit rover on Mars" tabindex="-1">
+<picture class="mars-landscape"><source media="(max-width: 720px)" srcset="assets/mars-ground-mobile.webp"><img src="assets/mars-ground-wide.webp" alt="A rusty orange Martian plain under a peach-tan sky and distant mountains" width="1536" height="1024" draggable="false"></picture>
+<div class="spirit-rover" role="img" aria-label="Spirit, a six-wheeled Mars rover"><img class="spirit-dusty" src="assets/spirit-dusty.webp" alt="" width="1536" height="1024" draggable="false"><img class="spirit-clean" src="assets/spirit-clean.webp" alt="" width="1536" height="1024" draggable="false"><canvas class="spirit-wheels" id="spirit-wheels" width="1536" height="1024" aria-hidden="true"></canvas><span class="spirit-stuck-tag" aria-hidden="true">STUCK</span></div>
+<div class="mars-wheel-trail" aria-hidden="true"></div><div class="mars-silica" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+<div class="mars-wind" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="mars-caption"><span>CHAPTER 3 · MARS</span><h2>Meet Spirit</h2><p>A rover built to explore the red planet.</p></div>
+<div class="mars-battery" role="status" aria-label="Spirit solar charge"><span>SOLAR CHARGE</span><strong id="mars-battery-value">60%</strong><div class="mars-battery-track"><i id="mars-battery-fill"></i></div></div>
+<svg class="mars-charge-pointer" id="mars-charge-pointer" aria-hidden="true"><path id="mars-charge-pointer-path"></path><circle id="mars-charge-pointer-dot" r="3"></circle></svg>
+<section class="mars-story" aria-label="Mira and Dr. Vance explore Spirit"><div class="mars-dialogue"><span class="speaker-label" id="mars-speaker">MIRA</span><p id="mars-line" aria-live="polite"></p></div><img class="mars-character" id="mars-character" src="assets/mira-amazed.webp" alt="Mira looking at Spirit" width="1024" height="1536" draggable="false"></section>
+<button class="mars-continue" id="mars-continue" type="button">CLICK ANYWHERE TO CONTINUE</button>
+<button class="mars-blow-button" id="mars-blow-button" type="button">BLOW DUST OFF <span aria-hidden="true">↗</span></button>
+<button class="mars-drive-button" id="mars-drive-forward" type="button">DRIVE FORWARD <span aria-hidden="true">→</span></button>
+<button class="mars-drive-button" id="mars-drive-backward" type="button">DRIVE BACKWARD <span aria-hidden="true">←</span></button>
+<button class="mars-drive-button mars-chapter4-button" id="mars-chapter4-button" type="button">Next: Chapter 4 <span aria-hidden="true">→</span></button>
+</section>
+<section class="phoenix-surface" id="phoenix-surface" aria-label="Chapter 4: Phoenix at the north pole of Mars" tabindex="-1">
+<img class="phoenix-landscape" src="assets/phoenix-arctic.webp" alt="A cold, flat Martian arctic plain with dusty ground and light frost" width="1536" height="1024" draggable="false">
+<div class="phoenix-cold-haze" aria-hidden="true"></div>
+<div class="phoenix-lander" role="img" aria-label="Phoenix, a three-legged Mars lander with two round solar wings and a robotic digging arm">
+<div class="phoenix-trench" aria-hidden="true"><i class="phoenix-ice-piece"></i><i class="phoenix-ice-piece"></i><i class="phoenix-ice-piece"></i><i class="phoenix-ice-piece"></i><i class="phoenix-ice-piece"></i><span class="phoenix-vapor"></span></div>
+<img src="assets/phoenix-lander.webp" alt="" width="1774" height="887" draggable="false">
+<svg class="phoenix-arm" viewBox="0 0 1774 887" aria-hidden="true"><g class="phoenix-arm-joint"><path class="phoenix-arm-shadow" d="M1035 540 L1107 644 L1160 770"/><path class="phoenix-arm-metal" d="M1035 540 L1107 644 L1160 770"/><circle cx="1035" cy="540" r="16"/><circle cx="1107" cy="644" r="12"/><path class="phoenix-scoop" d="M1144 766 Q1168 776 1180 760 L1177 790 Q1160 805 1147 786 Z"/></g></svg>
+</div>
+<div class="phoenix-caption"><span>CHAPTER 4 · MARS' NORTH POLE</span><h2>Meet Phoenix</h2><p>Dig beneath the cold Martian ground.</p></div>
+<div class="phoenix-day-hud" aria-live="polite"><span>TIME PASSED</span><strong id="phoenix-day-value">DAY 0</strong></div>
+<section class="phoenix-story" aria-label="Mira and Dr. Vance explore Phoenix"><div class="phoenix-dialogue"><span class="speaker-label" id="phoenix-speaker">MIRA</span><p id="phoenix-line" aria-live="polite"></p></div><img class="phoenix-character" id="phoenix-character" src="assets/mira-winter.webp" alt="Mira wearing warm clothes at the Martian north pole" width="1024" height="1536" draggable="false"></section>
+<button class="phoenix-continue" id="phoenix-continue" type="button">CLICK ANYWHERE TO CONTINUE</button>
+<button class="phoenix-action" id="phoenix-dig-button" type="button">DIG FOR ICE <span aria-hidden="true">↘</span></button>
+<button class="phoenix-action" id="phoenix-wait-button" type="button">WAIT 4 DAYS <span aria-hidden="true">→</span></button>
+<button class="phoenix-action phoenix-journey-button" id="phoenix-journey-button" type="button">SEE THE FULL JOURNEY <span aria-hidden="true">→</span></button>
+</section>
+<section class="journey-summary" id="journey-summary" aria-label="Full journey through five NASA machines" aria-hidden="true">
+<div class="journey-summary-inner">
+<header class="journey-heading"><span>THE BATON OF SILENCE · THE JOURNEY</span><h2 id="journey-title" tabindex="-1">ABANDONED, NEVER FORGOTTEN</h2><p>Every silent machine passed the baton so we could explore farther.</p></header>
+<div class="journey-track" aria-label="Five mission cards">
+<article class="journey-card"><span class="journey-year">1969 • MOON</span><h3>Apollo 11 Mirror</h3><p>Bounced your laser back in 2.56 seconds—still works with zero batteries.</p><a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1969-059C" target="_blank" rel="noopener noreferrer">NASA NSSDCA 1969-059C ↗</a></article>
+<article class="journey-card"><span class="journey-year">1967 • MOON</span><h3>Surveyor 3</h3><p>Poked the Moon dirt first to prove astronauts wouldn't sink.</p><a href="https://science.nasa.gov/mission/surveyor-3/" target="_blank" rel="noopener noreferrer">NASA Science · Surveyor 3 ↗</a></article>
+<article class="journey-card"><span class="journey-year">1971 • MOON</span><h3>Moon Buggy &amp; ALSEP</h3><p>Drove 27.9 km across the Moon and listened to moonquakes for 8 years.</p><a href="https://nssdc.gsfc.nasa.gov/nmc/spacecraft/display.action?id=1971-063C" target="_blank" rel="noopener noreferrer">NASA NSSDCA 1971-063C ↗</a></article>
+<article class="journey-card"><span class="journey-year">2004 • MARS</span><h3>Spirit Rover</h3><p>Used Mars wind to clean its panels and found hot-spring sand with a stuck wheel.</p><a href="https://science.nasa.gov/mission/mer-spirit/" target="_blank" rel="noopener noreferrer">NASA Science · Spirit ↗</a></article>
+<article class="journey-card"><span class="journey-year">2008 • MARS</span><h3>Phoenix Lander</h3><p>Dug into Mars' icy north pole and proved real water ice is hiding there.</p><a href="https://science.nasa.gov/mission/mars-phoenix/" target="_blank" rel="noopener noreferrer">NASA Science · Phoenix ↗</a></article>
+</div>
+<footer class="journey-footer"><button id="journey-replay" type="button">Play Again <span aria-hidden="true">↺</span></button><p>All mission facts &amp; coordinates verified via NASA NSSDCA &amp; NASA Science.</p></footer>
+</div>
+</section>
+</main>
+<script src="app.js"></script>
+</body></html>
